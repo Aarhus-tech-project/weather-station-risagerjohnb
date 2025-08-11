@@ -7,11 +7,11 @@
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 // WiFi credentials
-const char* ssid = "h4prog";
-const char* password = "1234567890";
+const char* ssid = "ssid";
+const char* password = "password";
 
 // MQTT broker
-const char* mqtt_server = "192.168.104.11"; // Use your own IP later
+const char* mqtt_server = "server_address";
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -38,23 +38,6 @@ void setup_wifi() {
     Serial.println(WiFi.localIP());
   } else {
     Serial.println("\nFailed to connect to WiFi");
-  }
-}
-
-void testConnectionToServer() {
-  const char* host = "192.168.104.11";  // Replace with your server IP
-  const int port = 1883;              // MQTT port
-
-  Serial.print("Testing connection to ");
-  Serial.print(host);
-  Serial.print(":");
-  Serial.println(port);
-
-  if (wifiClient.connect(host, port)) {
-    Serial.println("Server is reachable (TCP connection succeeded).");
-    wifiClient.stop();
-  } else {
-    Serial.println("Failed to reach server (TCP connection failed).");
   }
 }
 
