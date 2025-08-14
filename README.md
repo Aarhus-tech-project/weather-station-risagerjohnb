@@ -1,1 +1,5 @@
-<img width="3172" height="1546" alt="image" src="https://github.com/user-attachments/assets/71e2b543-da32-49cd-9457-6389078e3a5c" />
+Data with Grafana
+<img width="926" height="938" alt="image" src="https://github.com/user-attachments/assets/56c5f790-e8fa-4824-b756-20e010914427" />
+
+MQTT listening for incoming data
+<img width="528" height="294" alt="image" src="https://github.com/user-attachments/assets/0334c79d-e2b2-4773-af68-661e726914fc" />
