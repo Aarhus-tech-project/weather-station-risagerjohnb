@@ -47,7 +47,7 @@ void reconnect() {
     Serial.print("Attempting MQTT connection... ");
     // Attempt to connect
     if (client.connect("arduinoClient")) {
-      Serial.println("connected");
+      Serial.println("arduinoClient connected");
       // Once connected, you can publish or subscribe
       client.subscribe("weatherstation/command");  // optional
     } else {
@@ -72,28 +72,27 @@ void setup() {
 	client.setServer(mqtt_server, 1883);
 }
 
-const unsigned long interval = 86400000UL / 10; // 24h in ms divided by 10 = 2.4 hours interval
-unsigned long previousMillis = 0;
+unsigned long lastReadingTime = 0;
+const unsigned long interval = 300000; // 5 minutes in ms
 
 void loop() {
-  unsigned long currentMillis = millis();
-
-  if (currentMillis - previousMillis >= interval) {
-    previousMillis = currentMillis;
-
     if (!client.connected()) {
-      reconnect();
+        reconnect();
     }
     client.loop();
 
-    String payload = "{";
-    payload += "\"temperature\":" + String(bme.readTemperature(), 2) + ",";
-    payload += "\"pressure\":" + String(bme.readPressure() / 100.0F, 2) + ",";
-    payload += "\"humidity\":" + String(bme.readHumidity(), 2);
-    payload += "}";
+    unsigned long currentMillis = millis();
+    if (currentMillis - lastReadingTime >= interval) {
+        lastReadingTime = currentMillis;
 
-    client.publish("weather/data", payload.c_str());
-    Serial.println("Published: " + payload);
-  }
+        String payload = "{";
+        payload += "\"temperature\":" + String(bme.readTemperature(), 2) + ",";
+        payload += "\"pressure\":" + String(bme.readPressure() / 100.0F, 2) + ",";
+        payload += "\"humidity\":" + String(bme.readHumidity(), 2);
+        payload += "}";
+
+        client.publish("weather/data", payload.c_str());
+        Serial.println("Published: " + payload);
+    }
 }
 
