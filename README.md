@@ -50,3 +50,7 @@ How I did it:
 - Then I created the blazor server app and named it "WeatherDashboard"
 - Created the service first
 - Then modified index.razor to display the data
+
+Data with Blazor Server App
+<img width="3773" height="1109" alt="image" src="https://github.com/user-attachments/assets/3bd583f4-5afe-4dc3-840e-05282213af1e" />
+
