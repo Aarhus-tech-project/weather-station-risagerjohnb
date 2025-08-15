@@ -33,7 +33,7 @@ MYSQL "data" Table contains:
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 Data with Grafana
-<img width="926" height="938" alt="image" src="https://github.com/user-attachments/assets/56c5f790-e8fa-4824-b756-20e010914427" />
+<img width="915" height="857" alt="image" src="https://github.com/user-attachments/assets/fddf37fd-0b52-4963-80ae-3087d760fbfd" />
 
 Ubuntu server - MQTT listening for incoming data
 <img width="436" height="279" alt="image" src="https://github.com/user-attachments/assets/bd5cbfa6-b974-47e0-b9d1-85f30f909250" />
