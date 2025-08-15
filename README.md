@@ -37,3 +37,16 @@ Data with Grafana
 
 Ubuntu server - MQTT listening for incoming data
 <img width="436" height="279" alt="image" src="https://github.com/user-attachments/assets/bd5cbfa6-b974-47e0-b9d1-85f30f909250" />
+
+After all of that, I created a ASP.NET Core web API and a blazor server app to display the data in a different way.
+
+Tools I used to make this work:
+- C#
+- ASP.NET Core Web API
+- Blazor Server App
+
+How I did it:
+- I started by creating the web API to handle the data coming from the database and named it "WeatherAPI"
+- Then I created the blazor server app and named it "WeatherDashboard"
+- Created the service first
+- Then modified index.razor to display the data
